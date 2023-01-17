@@ -3,7 +3,7 @@ const { response } = require('express');
 const Bookmark = require('../model/bookmark.js')
 
 // Index
-app.get('/', async (req, res) => {
+router.get('/', async (req, res) => {
     try {
         res.json(await Bookmark.find({}));
     } catch (error) {
@@ -12,7 +12,7 @@ app.get('/', async (req, res) => {
 });
 
 // Create Bookmark
-app.post('/', async (req, res) => {
+router.post('/', async (req, res) => {
     try {
         res.json(await Bookmark.create(req.body));
     } catch (error) {
@@ -21,7 +21,7 @@ app.post('/', async (req, res) => {
 });
 
 // Update Bookmark
-app.put('/:id', async (req,res) => {
+router.put('/:id', async (req,res) => {
     try {
         res.json(
             await Bookmark.findByIdAndUpdate(req.params.id, req.body, { new: true })
@@ -32,7 +32,7 @@ app.put('/:id', async (req,res) => {
 });
 
 // Delete Bookmark
-app.delete('/:id', async (req, res) => {
+router.delete('/:id', async (req, res) => {
     try {
         res.json(await Bookmark.findByIdAndRemove(req.params.id));
     } catch (error) {
@@ -41,7 +41,7 @@ app.delete('/:id', async (req, res) => {
 });
 
 // Show Bookmark
-app.get('/:id', async (req, res) => {
+router.get('/:id', async (req, res) => {
     try {
         res.json(await Bookmark.findById(req.params.id));
     } catch (error) {
