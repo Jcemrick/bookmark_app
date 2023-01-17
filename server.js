@@ -18,7 +18,7 @@ app.use('/bookmark', bookmarkRouter)
 // Routes
 // Test
 app.get('/', (req, res) => {
-    console.log("Hello World");
+    res.send("Hello World");
 });
 
 
