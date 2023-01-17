@@ -5,6 +5,7 @@ const app = express();
 const cors = require('cors');
 const morgan = require('morgan');
 const PORT = process.env.PORT ?? 3333
+const bookmarkRouter = require('./controllers/bookmark')
 
 
 // Middleware
