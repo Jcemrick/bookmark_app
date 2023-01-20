@@ -34,7 +34,7 @@ router.put('/:id', async (req,res) => {
 // Delete Bookmark
 router.delete('/:id', async (req, res) => {
     try {
-        res.json(await Bookmark.findByIdAndRemove(req.params.id));
+        res.json(await Bookmark.findByIdAndDelete(req.params.id));
     } catch (error) {
         res.status(400).json(error);
     }
